@@ -9,8 +9,22 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Shrey Naik | MERN Stack Developer",
-  description: "Building scalable web applications and mastering full-stack development",
+  title: "Shrey Naik | MERN Stack Engineer & Full Stack Developer",
+  description: "Portfolio of Shrey Naik, a MERN Stack Engineer specializing in high-performance web applications and scalable architecture.",
+  keywords: ["Shrey Naik", "MERN Stack", "Full Stack Developer", "Next.js", "React", "Node.js", "Portfolio"],
+  authors: [{ name: "Shrey Naik" }],
+  openGraph: {
+    title: "Shrey Naik | MERN Stack Engineer",
+    description: "Building scalable web applications and mastering full-stack development",
+    url: "https://shreynaik.dev",
+    siteName: "Shrey Naik Portfolio",
+    locale: "en_US",
+    type: "website",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({

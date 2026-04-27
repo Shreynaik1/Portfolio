@@ -4,67 +4,52 @@ import { motion } from "framer-motion";
 
 export function About() {
   return (
-    <section id="about" className="py-24 relative bg-slate-50 border-t border-slate-100">
+    <section id="about" className="py-32 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="mb-12 flex items-center gap-4"
-        >
-          <h2 className="text-3xl font-bold text-slate-900 tracking-tight">About Me</h2>
-          <div className="h-px bg-slate-200 w-full max-w-xs md:max-w-md"></div>
-        </motion.div>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-start">
+          
+          {/* Section Header (Sticks on scroll for desktop) */}
+          <div className="lg:col-span-4 lg:sticky lg:top-32">
+            <p className="text-[var(--color-accent)] font-bold tracking-[0.3em] uppercase text-xs mb-4">
+              The Story
+            </p>
+            <h2 className="text-5xl md:text-6xl font-black text-slate-950 tracking-tighter leading-none mb-8">
+              Engineer<span className="text-[var(--color-accent)]">.</span><br />
+              Creator<span className="text-[var(--color-accent)]">.</span><br />
+              Thinker<span className="text-[var(--color-accent)]">.</span>
+            </h2>
+            <div className="w-12 h-1 bg-slate-950" />
+          </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-slate-600 space-y-6 text-lg leading-relaxed"
-          >
-            <p>
-              I am a passionate <span className="text-[var(--color-accent)] font-medium">MERN stack developer</span> currently in my 3rd year of engineering. I specialize in building modern, performant web applications using React and Node.js.
-            </p>
-            <p>
-              My journey in software development is driven by an eagerness to build intuitive and seamless user experiences. Currently, I am expanding my horizons by learning <span className="text-slate-900 font-medium">Next.js</span> to construct production-ready, full-stack applications with optimal SEO and performance.
-            </p>
-            <p>
-              Beyond web development, I am deeply focused on strengthening my analytical and logical thinking. I actively practice Problem Solving through <span className="text-slate-900 font-medium">Data Structures and Algorithms in Java</span>.
-            </p>
-          </motion.div>
+          {/* Main Bio Content */}
+          <div className="lg:col-span-8 space-y-12">
+            <div className="text-slate-600 space-y-8 text-xl leading-relaxed font-medium">
+              <p>
+                I am a <span className="text-slate-950">MERN Stack Engineer</span> with a deep passion for building high-performance web applications. My expertise lies at the intersection of robust backend logic and pixel-perfect frontend experiences.
+              </p>
+              <p>
+                I don&apos;t just write code; I architect solutions. Whether it&apos;s building a complex notes ecosystem or a high-end brand landing page, my focus is always on <span className="text-slate-950 underline decoration-[var(--color-accent)]/30 underline-offset-8">performance, efficiency, and user experience.</span>
+              </p>
+              <p>
+                Currently, I&apos;m focused on mastering <span className="text-[var(--color-accent)] font-serif italic">Full Stack Development</span> and refining my logical thinking through competitive programming in Java.
+              </p>
+            </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="bg-white border border-slate-200 shadow-sm rounded-2xl p-8 relative overflow-hidden"
-          >
-            <div className="absolute top-0 right-0 w-32 h-32 bg-[var(--color-accent)]/5 blur-[64px]" />
-            <h3 className="text-xl font-semibold text-slate-900 mb-6">Quick Facts</h3>
-            
-            <ul className="space-y-4">
-              <li className="flex items-start">
-                <span className="text-[var(--color-accent)] mr-3">▹</span>
-                <span className="text-slate-700">Degree: B.Tech in Engineering (3rd Year)</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-[var(--color-accent)] mr-3">▹</span>
-                <span className="text-slate-700">Location: Gujarat, India</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-[var(--color-accent)] mr-3">▹</span>
-                <span className="text-slate-700">Focus: Full Stack Web Development</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-[var(--color-accent)] mr-3">▹</span>
-                <span className="text-slate-700">Core: React, Node.js, Next.js</span>
-              </li>
-            </ul>
-          </motion.div>
+            {/* Quick Facts List */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 pt-12 border-t border-slate-100">
+              {[
+                { label: "Education", value: "B.Tech Computer Engineering" },
+                { label: "Location", value: "Gujarat, India" },
+                { label: "Focus", value: "Full Stack Systems" },
+                { label: "Core", value: "MERN & Next.js" },
+              ].map((fact, i) => (
+                <div key={i} className="space-y-2">
+                  <p className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em]">{fact.label}</p>
+                  <p className="text-2xl font-black text-slate-950 tracking-tight">{fact.value}</p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>

@@ -1,111 +1,61 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ChevronRight } from "lucide-react";
-import Image from "next/image";
+import { ArrowRight } from "lucide-react";
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center pt-24 pb-12 overflow-hidden bg-white">
-      {/* Subtle Background decoration */}
-      <div className="absolute top-1/4 -left-64 w-96 h-96 bg-[var(--color-accent)]/10 rounded-full blur-[128px] pointer-events-none" />
-      <div className="absolute bottom-1/4 -right-64 w-96 h-96 bg-[var(--color-accent)]/5 rounded-full blur-[128px] pointer-events-none" />
+    <section className="relative min-h-[90vh] flex items-center justify-center pt-24 pb-12 bg-white">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="space-y-8"
+        >
+         
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-        <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-12 lg:gap-8">
-          
-          {/* Left Text Content */}
-          <div className="w-full lg:w-3/5">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              <h2 className="text-[var(--color-accent)] font-bold tracking-widest text-sm uppercase mb-4">
-                Hi, my name is
-              </h2>
-            </motion.div>
+          <h1 className="text-7xl sm:text-8xl lg:text-9xl font-black text-slate-950 tracking-tighter leading-[0.9]">
+            Shrey <br />
+            Naik<span className="text-[var(--color-accent)]">.</span>
+          </h1>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-            >
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-slate-900 tracking-tight leading-tight mb-2">
-                Shrey Naik.
-              </h1>
-            </motion.div>
+          <p className="text-xl md:text-2xl text-slate-500 max-w-2xl mx-auto leading-relaxed font-medium">
+            Computer Engineering Student & <span className="text-slate-900">MERN Stack Developer</span> building scalable digital products with a focus on minimalist design and robust architecture.
+          </p>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
+          <div className="pt-8 flex flex-col sm:flex-row items-center justify-center gap-6">
+            <a
+              href="#projects"
+              className="w-full sm:w-auto px-12 py-5 bg-slate-950 text-white font-bold rounded-full hover:bg-slate-800 transition-all hover:scale-105 active:scale-95 shadow-xl shadow-slate-200"
             >
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-500 tracking-tight leading-tight mb-6">
-                I build scalable web applications.
-              </h1>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
+              View My Work
+            </a>
+            
+            <a
+              href="#contact"
+              className="group w-full sm:w-auto px-12 py-5 bg-white border border-slate-200 text-slate-950 font-bold rounded-full hover:border-slate-950 transition-all flex items-center justify-center gap-2"
             >
-              <p className="text-lg md:text-xl text-slate-600 mb-10 max-w-xl leading-relaxed">
-                I am a passionate <span className="text-[var(--color-accent)] font-semibold">MERN Stack Developer</span> currently in my 3rd year of engineering. I specialize in building modern, production-ready full-stack applications with an emphasis on seamless user experiences.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              className="flex flex-wrap gap-4"
-            >
-              <a
-                href="#projects"
-                className="inline-flex items-center px-8 py-4 border border-transparent text-base font-bold rounded-lg text-white bg-[var(--color-accent)] hover:bg-[var(--color-accent-hover)] shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all flex-shrink-0"
-              >
-                View Projects
-                <ChevronRight className="ml-2 -mr-1 h-5 w-5" />
-              </a>
-              <a
-                href="#contact"
-                className="inline-flex items-center px-8 py-4 border-2 border-[var(--color-accent)] text-base font-bold rounded-lg text-[var(--color-accent)] bg-transparent hover:bg-[var(--color-accent)]/5 hover:-translate-y-1 transition-all flex-shrink-0"
-              >
-                Contact Me
-              </a>
-            </motion.div>
+              Get in Touch
+              <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
+            </a>
           </div>
-
-          {/* Right Image Content */}
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.9, x: 20 }}
-            animate={{ opacity: 1, scale: 1, x: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="w-full lg:w-2/5 flex justify-center lg:justify-end relative"
-          >
-            <div className="relative w-64 sm:w-80 lg:w-[380px] aspect-[4/5]">
-              {/* Decorative Frame */}
-              <div className="absolute inset-0 border-4 border-[var(--color-accent)] rounded-3xl translate-x-4 translate-y-4 -z-10 transition-transform duration-300 hover:translate-x-2 hover:translate-y-2"></div>
-              
-              {/* Profile Image Container */}
-              <div className="absolute inset-0 bg-slate-50 rounded-3xl overflow-hidden shadow-xl border border-slate-200">
-                <Image
-                  src="/profile.jpg"
-                  alt="Shrey Naik Profile"
-                  fill
-                  unoptimized={true}
-                  sizes="(max-w-768px) 100vw, (max-w-1200px) 50vw, 33vw"
-                  className="object-cover object-center hover:scale-105 transition-all duration-700"
-                  priority
-                />
-              </div>
-            </div>
-          </motion.div>
-
-        </div>
+        </motion.div>
       </div>
+
+      {/* Subtle Scroll Indicator */}
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.5, duration: 1 }}
+        className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4"
+      >
+        <div className="w-px h-12 bg-gradient-to-b from-slate-200 to-transparent" />
+      </motion.div>
     </section>
   );
 }
+
+
+
+
